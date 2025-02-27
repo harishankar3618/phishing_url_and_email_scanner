@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishShield</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="../icons/icon.png" alt="PhishShield Logo" class="logo">
+            <h1>PhishShield</h1>
+        </div>
+        
+        <div class="status-card">
+            <div class="status-header">
+                <h2>Security Status</h2>
+            </div>
+            
+            <div class="status-content">
+                <div class="status-icon-container">
+                    <img id="statusIcon" src="../icons/scanning.png" alt="Status" class="status-icon">
+                    <div class="pulse-animation" id="scanningPulse"></div>
+                </div>
+                
+                <p id="statusText" class="status-text">🔄 Scanning...</p>
+                
+                <div id="detailsContainer" class="details-container">
+                    <p id="detailsText" class="details-text"></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="button-container">
+            <button id="rescanButton" class="action-button">Rescan</button>
+            <button id="settingsButton" class="action-button">Settings</button>
+        </div>
+    
+    <div class="footer">
+        <p>PhishShield v1.0.1</p>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>

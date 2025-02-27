@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "PhishShield",
+  "version": "1.0.1",
+  "description": "Advanced protection against phishing websites and emails",
+  "permissions": ["storage", "activeTab", "notifications", "tabs"],
+  "host_permissions": [
+    "https://www.virustotal.com/api/v3/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon.png",
+      "48": "icons/icon.png",
+      "128": "icons/icon.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon.png",
+    "48": "icons/icon.png",
+    "128": "icons/icon.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

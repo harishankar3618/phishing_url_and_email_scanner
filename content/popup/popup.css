@@ -1,0 +1,242 @@
+/* popup.css - Elegant UI with animations */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 340px;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.logo {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+    color: #2c3e50;
+}
+
+.status-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.status-card:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.status-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+h2 {
+    font-size: 16px;
+    margin: 0;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.status-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.status-icon-container {
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.status-icon {
+    width: 64px;
+    height: 64px;
+    z-index: 2;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.pulse-animation {
+    position: absolute;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: rgba(33, 150, 243, 0.2);
+    top: -2px;
+    left: -2px;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+/* Pulsing animation for scanning state */
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(0.95);
+        opacity: 0.7;
+    }
+}
+
+.status-text {
+    font-size: 16px;
+    margin: 0 0 10px 0;
+    text-align: center;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.details-container {
+    background: #f5f7fa;
+    padding: 10px 15px;
+    border-radius: 6px;
+    width: 100%;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.details-container.visible {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 15px;
+}
+
+.details-text {
+    font-size: 13px;
+    line-height: 1.4;
+    margin: 0;
+    color: #5d6778;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.action-button {
+    background: #f0f4f8;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex: 1;
+    margin: 0 5px;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.action-button:first-child {
+    margin-left: 0;
+}
+
+.action-button:last-child {
+    margin-right: 0;
+}
+
+.action-button:hover {
+    background: #e0e7ee;
+}
+
+.stats-container {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+h3 {
+    font-size: 14px;
+    margin: 0 0 12px 0;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.stats-row {
+    display: flex;
+    justify-content: space-around;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+.stat-count {
+    font-size: 24px;
+    font-weight: 600;
+    color: #3498db;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #7f8c8d;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+    color: #95a5a6;
+    border-top: 1px solid #f0f0f0;
+}
+
+/* Status-specific styles */
+.status-safe .status-text {
+    color: #27ae60;
+}
+
+.status-danger .status-text {
+    color: #e74c3c;
+}
+
+.status-scanning .status-text {
+    color: #3498db;
+}
+
+.status-scanning .pulse-animation {
+    opacity: 1;
+    animation: pulse 1.5s infinite;
+}
+
+.status-error .status-text {
+    color: #f39c12;
+}
