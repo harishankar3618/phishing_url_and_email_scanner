@@ -1,5 +1,5 @@
 // background.js
-const VIRUSTOTAL_API_KEY = "bb89e1b649f0044b5d654d6ea804de94525e59589471268add3d6bef65edee9c";
+const VIRUSTOTAL_API_KEY = "df0f291924441848a014c0f41ed63ad251e90d73243126a3272ab8cbc67e4994";
 
 // Handle URL scanning
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
